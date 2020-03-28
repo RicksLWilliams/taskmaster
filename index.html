@@ -1,18 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="assets/style.css" />
-    <title>TaskMaster</title>
-  </head>
 
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Task Maste</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="bg-secondary">
+    <header class="container-fluid">
+        <div class="row bg-dark text-center text-white">
+            <h1 class="col-12">Task Master</h1>
+        </div>
+    </header>
+
+    <main class="container-fluid bg-secondary text-warning">
+        <div class="row">
+            <div class="col-12">
+                <form class="w-25" onsubmit="app.listController.create(event)">
+                    <div class="form-group">
+                        <label for="listName">List Name</label>
+                        <input type="text" name="listName" class="form-control" placeholder="List Name...">
+                        
+                        <select class="custom-select" id="inputGroupSelect01">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+
+
+                        
+                        <button type="submit" class="btn btn-primary">+</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="lists">
+            <!-- draw Lists injects in here -->
+            <div class="col-4 border border-warning rounded shadow">
+              <button type="button" class="close text-danger" onclick="app.listController.delete('${this.id}')">
+              <span>&times;</span>
+              </button>
+                <h1>List Title</h1>
+                <form onsubmit="app.listController.addListItem(event, '${this.id}')">
+                  <div class="form-group">
+                    <label for="listItemName">List Item:</label>
+                    <input type="text" name="listItemName" class="form-control" placeholder="list item..." aria-describedby="helpId">
+                  </div>
+                </form>
+                <h5>List Items:</h5>
+                <dl>
+                  <span>${this.listItems}</span>
+                  <dd>
+                    <button type="button" class="close text-danger" onclick="app.listController.deleteListItem('${listId}','${index}')">
+                    <span>&times;</span>
+                    </button>
+                    <h5>${this.listItem[i]}</h5>
+                    </dd>
+                </dl>
+              </div>
+        </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="app/main.js" type="module"></script>
-  </body>
+</body>
+
 </html>

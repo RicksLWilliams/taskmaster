@@ -14,6 +14,7 @@ function _loadState() {
     data.lists = data.lists.map(l => new List(l));
     _state = data;
   }
+  console.log(data)
 }
 _loadState();
 
