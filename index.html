@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/style.css">
-    <title>Task Maste</title>
+    <title>Task Master</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -26,17 +26,20 @@
                     <div class="form-group">
                         <label for="listName">List Name</label>
                         <input type="text" name="listName" class="form-control" placeholder="List Name...">
-                        
-                        <select class="custom-select" id="inputGroupSelect01">
+                        <select class="custom-select" id="color">
                             <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                            <option class="bg-primary" value="bg-primary">primary</option>
+                            <option class="bg-secondary" value="bg-secondary">secondary</option>
+                            <option class="bg-success" value="bg-success">success</option>
+                            <option class="bg-danger" value="bg-danger">danger</option>
+                            <option class="bg-warning text-dark" value="bg-warning text-dark">warning</option>
+                            <option class="bg-info" value="bg-info">info</option>
+                            <option class="bg-light" value="bg-light">light</option>
+                            <option class="bg-dark text-white" value="bg-dark">dark</option>
                           </select>
+                          <button type="submit" class="btn btn-primary">+
 
-
-                        
-                        <button type="submit" class="btn btn-primary">+</button>
+                          </button>
                     </div>
                 </form>
             </div>

@@ -13,7 +13,7 @@ export default class List {
 
   get Template(){
     return `
-    <div class="col-4 border border-warning rounded shadow">
+    <div class="col-4 border border-warning rounded shadow ${this.color}">
     <button type="button" class="close text-danger" onclick="app.listController.delete('${this.id}')">
     <span>&times;</span>
     </button>
@@ -36,18 +36,23 @@ export default class List {
     let template = ''
     //return template
     //this.listsItems.forEach(listsItem => template += listsItem.getTemplate(this.id))
-    console.log("before for loop" , this.listsItems)
+    //console.log("before for loop" , this.listsItems)
     for (let i = 0; i < this.listsItems.length; i++){
-      console.log( "infor loop", i)
+      //console.log( "infor loop", i)
       template += `
+      <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="done">
+      <label class="form-check-label" for="done"><h5>${this.listsItems[i]}</h5></label>
       <button type="button" class="close text-danger" onclick="app.listController.deleteListItem('${this.id}',${i})">
-      <span>&times;</span>
+      <span >&times;</span>
       </button>
-      <h5>${this.listsItems[i]}</h5>
+      </div>
+
+
       </dd>
       `
     }
-    console.log(template)
+    //console.log(template)
     return template
   }
 
