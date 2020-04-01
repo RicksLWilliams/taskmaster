@@ -10,7 +10,7 @@ function _drawLists() {
   document.getElementById("lists").innerHTML = template
   //console.log(lists)
 }
-
+ 
 //Public
 export default class ListController {
   constructor() {

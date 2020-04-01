@@ -4,7 +4,7 @@ let _state = {
   /** @type {List[]} */
   lists: []
 };
-
+ 
 //NOTE You should not need to change the code from this point down
 
 //NOTE this method will get the lists from local storage at the start of the app
@@ -17,7 +17,7 @@ function _loadState() {
   console.log(data)
 }
 _loadState();
-
+ 
 class Store {
   /**
    * Provides access to application state data

@@ -10,7 +10,7 @@ export default class List {
   }
   //Be sure to add the methods needed to create the view template for this model
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
-
+ 
   get Template(){
     return `
     <div class="col-4 border border-warning rounded shadow ${this.color}">

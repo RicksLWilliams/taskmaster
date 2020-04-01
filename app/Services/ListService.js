@@ -14,7 +14,7 @@ class ListService {
     console.log(list)
    _store.saveState()
   }
-
+ 
   deleteListItem (listId, listItemId){
     let list = _store.State.lists.find(list => list.id == listId)
     list.listsItems.splice(listItemId ,1)
